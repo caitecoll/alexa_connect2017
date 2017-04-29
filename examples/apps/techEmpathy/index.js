@@ -2,7 +2,7 @@
 
 var Alexa = require('alexa-app');
 var app = new Alexa.app('techempathy');
-var storyFetcher = require('./storyFetcher');
+var StoryFetcher = require('./story_fetcher');
 
 app.launch(function(request, response) {
     var prompt = 'Welcome to Tech Empathy. To hear a story, say, tell me a story.';
@@ -15,7 +15,7 @@ app.intent('randomstory', {
         '{|tell|give|play} {|me} {|a|some} story about {-|StoryType}'
     ]},
     function(request, response) {
-        var storyFetcher = new storyFetcher();
+        var storyFetcher = new StoryFetcher();
         response.say(storyFetcher.requestStory());
     }
 );
