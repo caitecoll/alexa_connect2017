@@ -1,0 +1,14 @@
+{
+  "name": "wwcode_connect_2017_alexa",
+  "version": "1.0.0",
+  "description": "An introductory tutorial for developing alexa skills, originally developed for a presentation at Women Who Code's CONNECT 2017 national conference.",
+  "main": "index.js",
+  "scripts": {
+      "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Caitlin Collins",
+  "license": "ISC",
+  "dependencies": {
+      "alexa-app": "^2.3.4"
+  }
+}

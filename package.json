@@ -1,0 +1,20 @@
+{
+	"name": "alexa-app-server",
+	"version": "2.2.4",
+	"description": "A web server module for Alexa (Amazon Echo) apps (skills) using Node.js, Express, and alexa-app",
+	"main": "index.js",
+	"scripts": {
+		"start": "node examples/server"
+	},
+	"author": "Matt Kruse",
+	"dependencies": {
+		"alexa-app": "^2.3.4",
+		"bluebird": "^3.4.7",
+		"body-parser": "^1.15.2",
+		"ejs": "^2.5.5",
+		"express": "^4.14.0",
+		"hotswap": "^1.1.0",
+		"lodash": "^4.17.4",
+		"request-promise": "^4.1.1"
+	}
+}
