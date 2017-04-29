@@ -1,7 +1,7 @@
 'use strict';
 
 var Alexa = require('alexa-app');
-var app = new Alexa.app('techempathy');
+var app = new Alexa.app('techstories');
 var StoryFetcher = require('./story_fetcher');
 
 app.launch(function(request, response) {

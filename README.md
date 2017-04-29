@@ -27,11 +27,9 @@ In order to activate Alexa, a user must first wake the device using their chosen
 
 ### Invocation Name
 
-The most basic way of invoking a skill is simply using its invocation name. In this tutorial, our skill's invocation name is TechEmpathy. Simply stating the invocation name without specifying any action is known as a ```Launch Request``` and can be called by saying things such as, ```Alexa, launch TechEmpathy.```
+The most basic way of invoking a skill is simply using its invocation name. In this tutorial, our skill's invocation name is TechStories. Simply stating the invocation name without specifying any action is known as a ```Launch Request``` and can be called by saying things such as, ```Alexa, launch TechStories.```
 
 The skill will then respond, prompting the user to request a specific action, known as an intent.
-
-We can also combine  invocation name for our skill is ```TechEmpathy```
 
 ### Intents
 
@@ -107,41 +105,48 @@ This project relies upon a couple of noteworthy, open source Node modules that a
 
 * #### 3) Check out the code
     There are two major files that define our skill's functionality:
-    * ```examples/apps/techempathy/index.js```
+    * ```examples/apps/techstories/index.js```
     Here we use the alexa-app module to define our launch request and intent request and specify how Alexa should respond to each. You'll note that the utterances we've defined here look different than the examples above, and that's because we're taking advantage of alexa-app's utterance builder. Writing our utterances in this way helps account for all of the many combinations of words our users can say, and we'll see the output of that code in just a minute.
 
-    * ```examples/apps/techempathy/storyFetcher.js```
+    * ```examples/apps/techstories/storyFetcher.js```
     Because this tutorial doesn't interface with an api or database, all of our stories are stored in one array inside storyFetcher.js. This module is called to provide a response to our RandomStory intent, selecting an index at random from the array and sending that string in the response to Alexa.
 
 * #### 4) Check the output
-    Now, let's check how things look. Click the "Show Live" button again and add ```/techempathy``` to the end of your url. (Note: this corresponds to the name of your skill directory inside ```examples/apps/```, so if you've changed the name of that directory, you'll need to modify the url accordingly.)
-
-    This interface (provided to us by alexa-app), does a few useful things:
+    Now, let's check how things look. Click the "Show Live" button again and add ```/techstories``` to the end of your url. This interface (provided to us by alexa-app), does a few useful things:
     * **Schema**: You can see that the app has produced a JSON object representing our intent schema. We'll need to copy/paste that into the Alexa portal in just a moment.
     * **Utterances**: Alexa-app has also produced a list of several sample utterances from the two lines of code we wrote in index.js. We'll also need this information for the Alexa portal
     * **Request/Response Simulator**: Test out your skill by selecting 'Intent Request' from the 'Type' dropdown menu and 'randomstory' from the 'Intent' dropdown. This shows the request our skill will receive from Alexa, and by clicking "Send Request" you'll get back a response from our skill, giving you a random story.
 
 ## Link your Skill
 
-To make your skill accessible to an Alexa device, you'll need to link it using the Amazon Developer platform.
+To make your skill accessible to an Alexa device, you'll need to link it using the [Amazon Developer Console](https://developer.amazon.com). Once you're logged in, select 'Alexa Skills Kit' and from there click on 'Add a new Skill'.
 
-* #### 1) Remix the project
+* #### 1) Skill Information
+    Select the 'Custom Interaction Model' option for 'Skill Type'. Give your app a name, say 'Tech Empathy' and choose an invocation name - this is the name you say to Alexa to activate your skill, so 'Alexa ask InvocationName…'.
 
-* #### 2) Click 'Show'
+* #### 2) Interaction Model
+    You need to specify your Intent Schema and Sample Utterances. You can either copy/paste these from the screen we saw when testing our request a moment ago, or you can get the information directly by visiting ```/techstories?schema``` and ```/techstories?utterances```
 
-* #### 3) Make your changes
+* #### 3) Configuration
+    Under Endpoint, select 'HTTPS' and add your project's publish URL with '/techstories' appended to it. This is the URL you get when clicking 'Show', and it'll have the format 'https://project-name.glitch.me'. So for our example app, it's 'https://alexa-connect2017.glitch.me/techstories'. Select 'no' for account linking.
+
+* #### 4) SSL Certificate
+    Select the option 'My development endpoint is a subdomain of a domain that has a wildcard certificate from a certificate authority' as we sort this for you.
+
+* #### 5-7) Test, Publishing Information and Privacy
+    Make sure your skill has testing enabled under 'Test' and enter metadata about your app under 'Publishing Information'. For now, you can just enter basic info and come back and change it later when you're ready to properly publish your app. Say 'no' to the privacy questions and check your agreement to their terms. Then you can click 'Save' and your app should be ready to test (you don't want to submit it for certification at this stage - that's just for when your app is ready to go).
 
 ## Your Skill in Action
 
-Here are some ways to test it out
 * #### Echosim
-    Blurb about Echosim
-* #### Your Alexa Device
-    Blurb about testing on your device
+    You don't need an Echo device to test your skill! To get the impression of using an Amazon Echo, you can use [Echosim](https://echosim.io/welcome?next=%2F). Log in with your Amazon developer account, and the simulator will automatically have your skill enabled. Click and hold the mic button and give Alexa a test command. Say 'Ask {InvocationName} to tell me a story', and Alexa should respond with a random story.
+* #### Your Echo
+    If you have an Echo device already, ensure that it was set up using the same email account you used for your amazon developer account. If so, your skill is already available on your device. Test it out!
 
 ## Other Tutorials Worth Exploring
 
-* [Gomix Alexa Airport Skill](https://gomix.com/#!/project/alexa-skill)
+* [Glitch Alexa Airport Skill](https://gomix.com/#!/project/alexa-skill):
+    This project also uses alexa-app and alexa-app-server and was the tool that introduced me to these two awesome modules. It interfaces with an API and has a similar file structure to this tutorial.
 
 * [Gomix Star Wars Wiki Skill](https://gomix.com/#!/project/chewy)
 
