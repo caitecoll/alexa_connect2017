@@ -10,9 +10,6 @@ app.launch(function(request, response) {
 });
 
 app.intent('randomstory', {
-    'slots': {
-        'StoryType': 'StoryType'
-    },
     'utterances': [
         '{|tell|give|play} {|me} {|a|some} story',
         '{|tell|give|play} {|me} {|a|some} story about {-|StoryType}'

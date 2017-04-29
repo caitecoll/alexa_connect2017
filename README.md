@@ -48,7 +48,7 @@ Each skill can have multiple intents, and we must specify them when creating our
 }
 ```
 
-In the example above, our "slots" array is empty, meaning that this intent does not need or expect additional information from the user in order to complete the request. However, maybe the next version of our app could support a second request that allows users to hear stories from their city. In that case, our intent schema might look something like this:
+In the example above, our "slots" array is empty, meaning that this intent does not need or expect additional information from the user in order to complete the request. However, maybe the next version of our app could support a second intent that allows users to hear stories from their city. In that case, our intent schema might look something like this:
 
 ```json
 {
@@ -100,10 +100,26 @@ This project relies upon a couple of noteworthy, open source Node modules that a
 ## Get Started
 
 * #### 1) Remix the project
+    To begin, click this project's name in the top left corner and slect 'Remix This' from the dropdown menu. This opens a new project with a unique url that you can customize to your liking.
 
-* #### 2) Click 'Show'
+* #### 2) Click 'Show Live'
+    Confirm that your app server is running correctly by clicking 'Show Live' in the top left corner. If alexa-app-server is running correctly, you should see an html page that looks something like this:
 
-* #### 3) Make your changes
+* #### 3) Check out the code
+    There are two major files that define our skill's functionality:
+    * ```examples/apps/techempathy/index.js```
+    Here we use the alexa-app module to define our launch request and intent request and specify how Alexa should respond to each. You'll note that the utterances we've defined here look different than the examples above, and that's because we're taking advantage of alexa-app's utterance builder. Writing our utterances in this way helps account for all of the many combinations of words our users can say, and we'll see the output of that code in just a minute.
+
+    * ```examples/apps/techempathy/storyFetcher.js```
+    Because this tutorial doesn't interface with an api or database, all of our stories are stored in one array inside storyFetcher.js. This module is called to provide a response to our RandomStory intent, selecting an index at random from the array and sending that string in the response to Alexa.
+
+* #### 4) Check the output
+    Now, let's check how things look. Click the "Show Live" button again and add ```/techempathy``` to the end of your url. (Note: this corresponds to the name of your skill directory inside ```examples/apps/```, so if you've changed the name of that directory, you'll need to modify the url accordingly.)
+
+    This interface (provided to us by alexa-app), does a few useful things:
+    * **Schema**: You can see that the app has produced a JSON object representing our intent schema. We'll need to copy/paste that into the Alexa portal in just a moment.
+    * **Utterances**: Alexa-app has also produced a list of several sample utterances from the two lines of code we wrote in index.js. We'll also need this information for the Alexa portal
+    * **Request/Response Simulator**: Test out your skill by selecting 'Intent Request' from the 'Type' dropdown menu and 'randomstory' from the 'Intent' dropdown. This shows the request our skill will receive from Alexa, and by clicking "Send Request" you'll get back a response from our skill, giving you a random story.
 
 ## Link your Skill
 

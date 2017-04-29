@@ -2,7 +2,6 @@
 
 function StoryFetcher() {}
 
-// @TODO: Replace these strings with actual stories
 StoryFetcher.prototype.stories = [
     'This is the first story about inclusion',
     'This is the first story about exclusion',
