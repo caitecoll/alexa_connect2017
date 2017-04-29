@@ -8,6 +8,8 @@ This example is a slimmed-down version of an existing Alexa skill called TechEmp
 
 Before getting started, be sure you have an [Amazon Developer Account](https://developer.amazon.com)
 
+Also, if you're viewing this code on Github but would like to remix your own project and follow along with the tutorial, view the [project on Glitch](https://glitch.com/edit/#!/alexa-connect2017?path=README.md:1:0)
+
 ## What is Alexa and how does it work?
 
 Alexa is the voice command system developed by Amazon that runs on the Echo, Echo Dot and Tap devices. In short, it's a collection of front-end services that interface with another Amazon service, Lex. Lex accepts a speech recording, turns it into text and interprets it, then sends a response back to Alexa, which delivers it to the speaker.
