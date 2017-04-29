@@ -1,5 +1,7 @@
 # Building Alexa Skills with Glitch
 
+![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2Ftumblr_oh84ux7VVU1uiitobo5_1280.jpg?1493487521441)
+
 The code in this project is meant to serve as a starting point for learning the Alexa developer platform, and we encourage you to build off of it to make something uniquely yours. We've included additional tutorials and resources at the bottom of this file, so be sure to check those out to learn more.
 
 This example is a slimmed-down version of an existing Alexa skill called TechEmpathy. We've removed all API/database calls and simplified the file structure in order to use it as a teaching tool. If you're interested in seeing the TechEmpathy Alexa skill in action, you can add it through the Alexa mobile app beginning in mid-May. Additionally, the TechEmpathy skill also has a companion iOS app, and you can download it now to add your own voice to our efforts!
@@ -19,6 +21,8 @@ The Alexa platform used within Echo devices is based around the concept of skill
 For instance, a new skill can give Alexa the ability to order a pizza, start a vacuum, request laundry service or tell you a joke. The possibilities are extensive, giving developers an open platform to think of new skill ideas.
 
 ## How do users interact with Skills?
+
+![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2FAlexa-Skills-Cover-Art.jpg?1493487645777)
 
 When a user makes a request through Alexa, Lex needs to be able to identify two primary things: what skill the user is trying to invoke and what action they want that skill to take.
 
@@ -98,9 +102,11 @@ This project relies upon a couple of noteworthy, open source Node modules that a
 ## Get Started
 
 * #### 1) Remix the project
+    ![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2FScreen%20Shot%202017-04-29%20at%2012.41.56%20PM.png?1493487922412)
     To begin, click this project's name in the top left corner and slect 'Remix This' from the dropdown menu. This opens a new project with a unique url that you can customize to your liking.
 
 * #### 2) Click 'Show Live'
+    ![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2FScreen%20Shot%202017-04-29%20at%2012.46.03%20PM.png?1493488016357)
     Confirm that your app server is running correctly by clicking 'Show Live' in the top left corner. If alexa-app-server is running correctly, you should see an html page that looks something like this:
 
 * #### 3) Check out the code
@@ -112,12 +118,15 @@ This project relies upon a couple of noteworthy, open source Node modules that a
     Because this tutorial doesn't interface with an api or database, all of our stories are stored in one array inside storyFetcher.js. This module is called to provide a response to our RandomStory intent, selecting an index at random from the array and sending that string in the response to Alexa.
 
 * #### 4) Check the output
+    ![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2FScreen%20Shot%202017-04-29%20at%2012.50.56%20PM.png?1493488386010)
     Now, let's check how things look. Click the "Show Live" button again and add ```/techstories``` to the end of your url. This interface (provided to us by alexa-app), does a few useful things:
     * **Schema**: You can see that the app has produced a JSON object representing our intent schema. We'll need to copy/paste that into the Alexa portal in just a moment.
     * **Utterances**: Alexa-app has also produced a list of several sample utterances from the one line of code we wrote in index.js. We'll also need this information for the Alexa portal
     * **Request/Response Simulator**: Test out your skill by selecting 'Intent Request' from the 'Type' dropdown menu and 'randomstory' from the 'Intent' dropdown. This shows the request our skill will receive from Alexa, and by clicking "Send Request" you'll get back a response from our skill, giving you a random story.
 
 ## Link your Skill
+
+![](https://cdn.glitch.com/0643727c-8bb1-461d-9abb-b804d2576e30%2FScreen%20Shot%202017-04-29%20at%2010.03.56%20AM.png?1493488603210)
 
 To make your skill accessible to an Alexa device, you'll need to link it using the [Amazon Developer Console](https://developer.amazon.com). Once you're logged in, select 'Alexa' from the top menu, then click 'Get Started' on the Alexa Skills Kit option. From there you'll see a list of you existing skills; click on 'Add a New Skill' in the top right corner.
 
