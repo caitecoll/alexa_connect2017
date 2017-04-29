@@ -52,7 +52,7 @@ In the example above, our "slots" array is empty, meaning that this intent does 
 {
   "intents": [
     {
-      "intent": "GetRandomStory",
+      "intent": "randomstory",
       "slots": []
     },
     {
@@ -72,7 +72,7 @@ In the example above, our "slots" array is empty, meaning that this intent does 
 
 There are multiple phrases, known as ```utterances```, that be used to invoke a specific intent. For instance "Tell me a story" or "Play a story" are both intended to invoke the same action, but are phrased slightly differently. While Lex will attempt to handle some variance in speech and interpret a user's meaning, it benefits us to plan for as many phrases as possible.
 
-When entering our example utterances in the Alexa developer portal, we'll need to specify bpth the utterance and the intent it is meant invoke:
+When entering our example utterances in the Alexa developer portal, we'll need to specify both the utterance and the intent it is meant invoke:
 
 ``` text
 GetRandomStory tell me a story
@@ -114,24 +114,24 @@ This project relies upon a couple of noteworthy, open source Node modules that a
 * #### 4) Check the output
     Now, let's check how things look. Click the "Show Live" button again and add ```/techstories``` to the end of your url. This interface (provided to us by alexa-app), does a few useful things:
     * **Schema**: You can see that the app has produced a JSON object representing our intent schema. We'll need to copy/paste that into the Alexa portal in just a moment.
-    * **Utterances**: Alexa-app has also produced a list of several sample utterances from the two lines of code we wrote in index.js. We'll also need this information for the Alexa portal
+    * **Utterances**: Alexa-app has also produced a list of several sample utterances from the one line of code we wrote in index.js. We'll also need this information for the Alexa portal
     * **Request/Response Simulator**: Test out your skill by selecting 'Intent Request' from the 'Type' dropdown menu and 'randomstory' from the 'Intent' dropdown. This shows the request our skill will receive from Alexa, and by clicking "Send Request" you'll get back a response from our skill, giving you a random story.
 
 ## Link your Skill
 
-To make your skill accessible to an Alexa device, you'll need to link it using the [Amazon Developer Console](https://developer.amazon.com). Once you're logged in, select 'Alexa Skills Kit' and from there click on 'Add a new Skill'.
+To make your skill accessible to an Alexa device, you'll need to link it using the [Amazon Developer Console](https://developer.amazon.com). Once you're logged in, select 'Alexa' from the top menu, then click 'Get Started' on the Alexa Skills Kit option. From there you'll see a list of you existing skills; click on 'Add a New Skill' in the top right corner.
 
 * #### 1) Skill Information
-    Select the 'Custom Interaction Model' option for 'Skill Type'. Give your app a name, say 'Tech Empathy' and choose an invocation name - this is the name you say to Alexa to activate your skill, so 'Alexa ask InvocationName…'.
+    Select the 'Custom Interaction Model' option for 'Skill Type'. Give your app a name, say 'Tech Stories' and choose an invocation name - this is the name you say to Alexa to activate your skill, so 'Alexa ask InvocationName…'. Under Global Fields the Audio Player option should be set to 'No.' Click Save, then Next.
 
 * #### 2) Interaction Model
-    You need to specify your Intent Schema and Sample Utterances. You can either copy/paste these from the screen we saw when testing our request a moment ago, or you can get the information directly by visiting ```/techstories?schema``` and ```/techstories?utterances```
+    You need to specify your Intent Schema and Sample Utterances. You can either copy/paste these from the screen we saw when testing our request a moment ago, or you can get the information directly by visiting ```/techstories?schema``` and ```/techstories?utterances``` Because we do not have slots in our randomStory intent, skip this section. After entering the intent schema and utterances, click Save and Next.
 
 * #### 3) Configuration
-    Under Endpoint, select 'HTTPS' and add your project's publish URL with '/techstories' appended to it. This is the URL you get when clicking 'Show', and it'll have the format 'https://project-name.glitch.me'. So for our example app, it's 'https://alexa-connect2017.glitch.me/techstories'. Select 'no' for account linking.
+    Under Endpoint, select 'HTTPS', then 'North America' and add your project's publish URL with '/techstories' appended to it. This is the URL you get when clicking 'Show', and it'll have the format 'https://project-name.glitch.me'. So for this tutorial, it's 'https://alexa-connect2017.glitch.me/techstories'. Select 'no' for account linking and ignore the Device Permissions section.
 
 * #### 4) SSL Certificate
-    Select the option 'My development endpoint is a subdomain of a domain that has a wildcard certificate from a certificate authority' as we sort this for you.
+    Select the option 'My development endpoint is a subdomain of a domain that has a wildcard certificate from a certificate authority' as Glitch handles this for us.
 
 * #### 5-7) Test, Publishing Information and Privacy
     Make sure your skill has testing enabled under 'Test' and enter metadata about your app under 'Publishing Information'. For now, you can just enter basic info and come back and change it later when you're ready to properly publish your app. Say 'no' to the privacy questions and check your agreement to their terms. Then you can click 'Save' and your app should be ready to test (you don't want to submit it for certification at this stage - that's just for when your app is ready to go).
