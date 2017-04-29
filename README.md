@@ -23,7 +23,7 @@ For instance, a new skill can give Alexa the ability to order a pizza, start a v
 When a user makes a request through Alexa, Lex needs to be able to identify two primary things: what skill the user is trying to invoke and what action they want that skill to take.
 
 ### Wake Word
-In order to activate Alexa, a user must first wake the device using their chosen wake word of "Alexa," "Echo," or "Amazon."
+In order to activate Alexa, a user must first wake the device using their chosen wake word of "Alexa," "Echo," "Amazon," or, in a nod to Star Trek, "Computer."
 
 ### Invocation Name
 
